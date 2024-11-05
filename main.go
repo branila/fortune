@@ -1,7 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"log"
+	"net/http"
+
+	"github.com/branila/fortune/handler"
+)
 
 func main() {
-	fmt.Println("Fortuna giornaliera!")
+	http.HandleFunc("/telegram", handler.Master)
+
+	log.Fatal(http.ListenAndServe(":3687", nil))
 }
