@@ -10,5 +10,5 @@ import (
 func main() {
 	http.HandleFunc("/telegram", handler.Master)
 
-	log.Fatal(http.ListenAndServe(":3687", nil))
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
